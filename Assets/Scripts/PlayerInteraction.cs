@@ -7,13 +7,19 @@ public class PlayerInteraction : MonoBehaviour
     private const float         MAX_INTERACTION_DISTANCE = 2.0f;
     private const string        PICK_UP_MESSAGE = "Pick up ";
     public CanvasManager        canvasManager;
-    private Interactive    _currentInteractive;
+    public DialogueManager      dialogueManager;
+    private DialogueTrigger     _dialogueTrigger;
+    private Interactive         _currentInteractive;
     private List<Interactive>   _inventory;
     private Transform           _cameraTransform;
     private bool                _hasRequirements;
+    private LayerMask           _interactablesLayer;
+    private LayerMask           _vocalNPCsLayer;
 
     public void Start()
     {
+        _interactablesLayer = LayerMask.NameToLayer("Interactables");
+        _interactablesLayer = LayerMask.NameToLayer("VocalNPCs");
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _currentInteractive = null;
         _inventory = new List<Interactive>();
@@ -31,15 +37,32 @@ public class PlayerInteraction : MonoBehaviour
             (_cameraTransform.position, _cameraTransform.forward,
             out RaycastHit hitInfo, MAX_INTERACTION_DISTANCE))
         {
-            Interactive newInteractive = hitInfo.collider.GetComponent<Interactive>();
+            if(hitInfo.transform.gameObject.layer == _interactablesLayer)
+            {
+                Interactive newInteractive = hitInfo.collider.GetComponent<Interactive>();
 
-            if (newInteractive != null && newInteractive != _currentInteractive)
-                SetCurrentInteractive(newInteractive);
-            else if (newInteractive == null)
-                ClearCurrentInteractive();
+                if (newInteractive != null && newInteractive != _currentInteractive)
+                    SetCurrentInteractive(newInteractive);
+                else if (newInteractive == null)
+                    ClearCurrentInteractive();
+            }
+
+            if(hitInfo.transform.gameObject.layer == _vocalNPCsLayer)
+            {
+                _dialogueTrigger =
+                    hitInfo.collider.GetComponent<DialogueTrigger>();
+            }
         }
         else
             ClearCurrentInteractive();
+    }
+
+    private void CheckForTalkable()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _dialogueTrigger.TriggerDialogue();
+        }
     }
 
     private void SetCurrentInteractive(Interactive newInteractive)
