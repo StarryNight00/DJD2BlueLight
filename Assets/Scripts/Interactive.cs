@@ -2,49 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableItem : MonoBehaviour
+public class Interactive : MonoBehaviour
 {
-    public enum InteractiveType { PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT }
-
+    public enum InteractiveType {PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT};
     public InteractiveType      type;
-    public Sprite               icon;
-    public string               itemName;
-    public string               requirementText;
     public string               interactionText;
+    public Sprite               inventoryIcon;
+    public string               inventoryName;
+    public string               requirementText;
+    public Interactive[]        activationChain;
+    public Interactive[]        inventoryRequirements;
+    public Interactive[]        interactionChain;
+    private Animator            _animator;
     public bool                 isActive;
 
-    public InteractableItem[]   interactionChain;
-    public InteractableItem[]   activationChain;
-    public InteractableItem[]   inventoryRequirements;
-
-    private Animator            _animator;
-
-    private void Start()
+    public void Start()
     {
         _animator = GetComponent<Animator>();
     }
 
-    private void Activate()
+    public void Activate()
     {
         isActive = true;
     }
-
+    
     public void Interact()
     {
         if (_animator != null)
             _animator.SetTrigger("Interact");
-
         if (isActive)
         {
-            InteractConnected();
+            ProcessInteractionChain();
             ProcessActivationChain();
 
-            if (type == InteractableItem.InteractiveType.INTERACT_ONCE)
+            if (type == InteractiveType.INTERACT_ONCE)
                 GetComponent<Collider>().enabled = false;
         }
+
+        
     }
 
-    private void InteractConnected()
+    public void ProcessInteractionChain()
     {
         if (interactionChain != null)
         {
@@ -53,13 +51,12 @@ public class InteractableItem : MonoBehaviour
         }
     }
 
-    private void ProcessActivationChain()
+    public void ProcessActivationChain()
     {
         if (activationChain != null)
         {
             for (int i = 0; i < activationChain.Length; ++i)
-                interactionChain[i].Activate();
+                activationChain[i].Activate();
         }
-
     }
 }

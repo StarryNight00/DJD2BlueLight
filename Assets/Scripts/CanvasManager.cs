@@ -9,6 +9,13 @@ public class CanvasManager : MonoBehaviour
     public GameObject crossHairInteract;
     public GameObject interactionPanel;
     public Text interactionText;
+    public Image[] inventoryIcons;
+
+    public void Start()
+    {
+        //ShowInteractionPanel("I am, in fact, working as expected");
+        HideInteractionPanel();
+    }
 
     public void ShowInteractionPanel(string interactionMessage)
     {
@@ -17,6 +24,7 @@ public class CanvasManager : MonoBehaviour
         crossHairNormal.SetActive(false);
         crossHairInteract.SetActive(true);
     }
+
     public void HideInteractionPanel()
     {
         interactionPanel.SetActive(false);
@@ -24,11 +32,18 @@ public class CanvasManager : MonoBehaviour
         crossHairNormal.SetActive(true);
     }
 
-    public void Start()
+    public void SetInventoryIcon(int i, Sprite icon)
     {
+        inventoryIcons[i].sprite = icon;
+        inventoryIcons[i].color = Color.white;
+    }
 
-        HideInteractionPanel();
-
-        //ShowInteractionPanel("dabadiiii");
+    public void ClearInventoryIcons()
+    {
+        for (int i = 0; i < inventoryIcons.Length; ++i)
+        {
+            inventoryIcons[i].sprite = null;
+            inventoryIcons[i].color = Color.clear;
+        }
     }
 }
