@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
+    public GameObject crossHairNormal;
+    public GameObject crossHairInteract;
     public GameObject interactionPanel;
     public Text interactionText;
 
@@ -12,10 +14,14 @@ public class CanvasManager : MonoBehaviour
     {
         interactionText.text = interactionMessage;
         interactionPanel.SetActive(true);
+        crossHairNormal.SetActive(false);
+        crossHairInteract.SetActive(true);
     }
     public void HideInteractionPanel()
     {
         interactionPanel.SetActive(false);
+        crossHairInteract.SetActive(false);
+        crossHairNormal.SetActive(true);
     }
 
     public void Start()
