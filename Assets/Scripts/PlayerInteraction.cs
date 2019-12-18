@@ -10,11 +10,15 @@ public class PlayerInteraction : MonoBehaviour
     private bool _hasRequirements;
     private Transform _cameraTransform;
     private List<InteractableItem> _inventory;
+    private LayerMask _vocalNPCsLayer;
+    private LayerMask _interactablesLayer;
 
     public CanvasManager canvasManager;
 
     private void Start()
     {
+        _vocalNPCsLayer = LayerMask.NameToLayer("VocalNPCs");
+        _vocalNPCsLayer = LayerMask.NameToLayer("Interactables");
         _currentInteractive = null;
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _inventory = new List<InteractableItem>();

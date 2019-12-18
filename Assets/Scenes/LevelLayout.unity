@@ -147,6 +147,33 @@ MonoBehaviour:
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
+--- !u!1 &70649078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 847377998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &70649079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70649078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: I'm watering the flowers, go away, kid. Eh eh eh...
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &100616552
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +341,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 103653266}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &162574077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1565473262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &162574081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162574077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: Hello and welcome to the interview. We will be your interviewers
+    for today, but despite this task we will also be judging you accordingly, so keep
+    that in mind when you do anything. You will be given a few choices to make and
+    depending on the results, you will be later placed into one of our factions. You
+    will now be given two folders, you must choose one of the files. Let us not waste
+    anymore time. Here are the folders.
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &225965162
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -423,6 +482,7 @@ Transform:
   - {fileID: 1648631717}
   - {fileID: 847377999}
   - {fileID: 1436571012}
+  - {fileID: 666579507}
   m_Father: {fileID: 1611421688}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -441,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 4320171753017185031, guid: c41f54f81bd65e945aa2764101ef9595,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320171753017185027, guid: c41f54f81bd65e945aa2764101ef9595,
         type: 3}
@@ -1153,7 +1213,7 @@ PrefabInstance:
     - target: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
         type: 3}
@@ -1264,6 +1324,109 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &666579506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 241078263}
+    m_Modifications:
+    - target: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_Name
+      value: NeutralNPC_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.540809
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2ba923c5af4c61488afc96b9dd89eff, type: 3}
+--- !u!4 &666579507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 666579506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &666579508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 666579506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &666579509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666579508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: "I don\u2019t know why we need all this. The obvious choice is
+    Freedom! Who doesn\u2019t want the chance to be themselves?"
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1518,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &707000097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1010741903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &707000098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707000097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: It just happened! I-i-i don't know which one is my ticket... Maybe
+    you could help me? I'm kind of freaking out, here...
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &731168312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +2022,35 @@ MonoBehaviour:
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
+--- !u!1 &887846774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4320171753017185031, guid: c41f54f81bd65e945aa2764101ef9595,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436571011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &887846775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887846774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: 'We, the Order faction, represent union and structure, we are all
+    equal and we share the same goal. The symbol you see on our face is the symbol
+    that identifies us all. '
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &930176598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,7 +2340,7 @@ PrefabInstance:
     - target: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1734953004900154264, guid: e2ba923c5af4c61488afc96b9dd89eff,
         type: 3}
@@ -2185,6 +2405,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1010741903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1062831444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 574786786389495311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1062831445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062831444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: '*sigh* These two here dropped their tickets and they don''t know
+    which is which...f'
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
+--- !u!1 &1100406794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 103653266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1100406795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100406794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: Why is it so cold here?
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &1103899626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,7 +2770,6 @@ MonoBehaviour:
     type: 3}
   interactionPanel: {fileID: 1424533146}
   interactionText: {fileID: 225965163}
-  inventoryIcons: []
 --- !u!1 &1255239732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,7 +2925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1280575648}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: ProgressionNPCs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,6 +2952,35 @@ Transform:
   m_Father: {fileID: 1611421688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1379877151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 515147799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1379877152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379877151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: "We, the Freedom faction, aren\u2019t ruled by others, each and
+    every single one of us is unique in his own way. That feeling you have, to stand
+    out from the mob, you know?"
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1001 &1398750644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,7 +3149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0.39215687}
+  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0.7490196}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3036,6 +3339,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439091142}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1470840785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1648631716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470840786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470840785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: That guy said that if I join the Order I can read minds! Hell Yeah!!
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
+--- !u!1 &1483128455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4320171753017185031, guid: c41f54f81bd65e945aa2764101ef9595,
+    type: 3}
+  m_PrefabInstance: {fileID: 245480244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483128456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483128455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: Hello and welcome to the interview. We will be your interviewers
+    for today, but despite this task we will also be judging you accordingly, so keep
+    that in mind when you do anything. You will be given a few choices to make and
+    depending on the results, you will be later placed into one of our factions. You
+    will now be given two folders, you must choose one of the files. Let us not waste
+    anymore time. Here are the folders.
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &1537329522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,7 +3595,7 @@ PrefabInstance:
     - target: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 574786785723193288, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
         type: 3}
@@ -3298,6 +3660,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1565473262}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1568566074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: e2ba923c5af4c61488afc96b9dd89eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 534475836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568566075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568566074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: That's my ticket! I'm the one who gets to go in first! I was totally
+    here first!!!
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!1 &1611421687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,33 +3861,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1657286627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3271852260085258413, guid: a198ce5f1f29a424392bdc81445796b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2085631077}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1657286628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657286627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b0db1ff3f1b18429bae5929c8091f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  interactionText: 
-  inventoryIcon: {fileID: 0}
-  inventoryName: 
-  requirementText: 
-  activationChain: []
-  inventoryRequirements: []
-  interactionChain: []
-  isActive: 0
 --- !u!1 &1662129763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1784666183
 Transform:
   m_ObjectHideFlags: 0
@@ -3895,7 +4258,7 @@ PrefabInstance:
     - target: {fileID: 4320171753017185031, guid: c41f54f81bd65e945aa2764101ef9595,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320171753017185027, guid: c41f54f81bd65e945aa2764101ef9595,
         type: 3}
@@ -3960,6 +4323,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1863981669}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1877597348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4320171753017185031, guid: c41f54f81bd65e945aa2764101ef9595,
+    type: 3}
+  m_PrefabInstance: {fileID: 1863981669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877597352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877597348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  icon: {fileID: 0}
+  itemName: 
+  requirementText: 
+  interactionText: Hello! Welcome to the interview center! Today is the day in which
+    you become a fully fledged member of society. After your ticket gets called, proceed
+    into the interview room. In there, they will ask you a series of questions, which
+    will help us determine your place among us.
+  isActive: 1
+  interactionChain: []
+  activationChain: []
+  inventoryRequirements: []
 --- !u!4 &2013087352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7007450286252359018, guid: 2f33ec33082d7554db5afba0f49df1d5,
@@ -4068,6 +4461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CrossHair2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289747472839690119, guid: aed906a016c1e0b4cbf231873a63b353,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1289747472839690136, guid: aed906a016c1e0b4cbf231873a63b353,
         type: 3}
@@ -4363,7 +4761,7 @@ PrefabInstance:
     - target: {fileID: 574786785723193292, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 574786785723193288, guid: 6ee1c45693a38604b9f79bf48b1c56c2,
         type: 3}
@@ -4972,7 +5370,7 @@ PrefabInstance:
     - target: {fileID: 6214563619772838548, guid: 251182188b365524189e6d5f668c39d9,
         type: 3}
       propertyPath: type
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 238362516532069463, guid: 251182188b365524189e6d5f668c39d9,
         type: 3}
