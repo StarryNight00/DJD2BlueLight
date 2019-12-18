@@ -10,11 +10,6 @@ public class PlayerInteraction : MonoBehaviour
     private bool _hasRequirements;
     private Transform _cameraTransform;
     private List<InteractableItem> _inventory;
-    public CanvasManager        canvasManager;
-    public DialogueManager      dialogueManager;
-    private DialogueTrigger     _dialogueTrigger;
-    private LayerMask           _interactablesLayer;
-    private LayerMask           _vocalNPCsLayer;
 
     public CanvasManager canvasManager;
 
@@ -23,8 +18,6 @@ public class PlayerInteraction : MonoBehaviour
         _currentInteractive = null;
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _inventory = new List<InteractableItem>();
-        _interactablesLayer = LayerMask.NameToLayer("Interactables");
-        _interactablesLayer = LayerMask.NameToLayer("VocalNPCs");
     }
     private void Update()
     {
@@ -39,36 +32,21 @@ public class PlayerInteraction : MonoBehaviour
                             out RaycastHit hitInfo,
                             MAX_INTERACTION_DISTANCE))
         {
-            if(hitInfo.transform.gameObject.layer == _interactablesLayer)
-            {
-                InteractableItem newInteractive = hitInfo.
-                     collider.GetComponent<InteractableItem>();
+            InteractableItem newInteractive = hitInfo.
+                             collider.GetComponent<InteractableItem>();
 
-                if (newInteractive != null && newInteractive != _currentInteractive)
-                {
-                    SetCurrentInteractive(newInteractive);
-                }
-                else if (newInteractive = null)
-                {
-                    ClearCurrentInteractive();
-                }
-            if(hitInfo.transform.gameObject.layer == _vocalNPCsLayer)
+            if (newInteractive != null && newInteractive != _currentInteractive)
             {
-                _dialogueTrigger =
-                    hitInfo.collider.GetComponent<DialogueTrigger>();
+                SetCurrentInteractive(newInteractive);
+            }
+            else if (newInteractive = null)
+            {
+                ClearCurrentInteractive();
             }
         }
         else
         {
             ClearCurrentInteractive();
-        }
-    }
-
-    private void CheckForTalkable()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _dialogueTrigger.TriggerDialogue();
         }
     }
 
