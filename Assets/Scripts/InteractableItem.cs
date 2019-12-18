@@ -4,32 +4,60 @@ using UnityEngine;
 
 public class InteractableItem : MonoBehaviour
 {
-    [SerializeField]    private string  objectName;
-    
-    public bool                 isInteractable;
-    private bool                isClicked;
+    public enum InteractiveType { PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT }
 
-    private void OnMouseDown()
+    public InteractiveType      type;
+    public Texture              icon;
+    public string               itemName;
+    public string               requirementText;
+    public string               interactionText;
+    public bool                 isActive;
+
+    public InteractableItem[]   interactionChain;
+    public InteractableItem[]   activationChain;
+    public InteractableItem[]   inventoryRequirements;
+
+    private Animator _animator;
+
+    private void Start()
     {
-        isClicked = true;
+        _animator = GetComponent<Animator>();
     }
 
-    private void PrintName()
+    private void Activate()
     {
-        Debug.Log(objectName);
+        isActive = true;
     }
-
-    private void FixedUpdate()
+    public void Interact()
     {
-        if (isInteractable)
+        _animator.SetTrigger("Interact");
+
+        if (isActive)
         {
-            if (isClicked)
-            {
-                Debug.Log(objectName);
-                Destroy(gameObject);
-            }
+            InteractConnected();
+            ProcessActivationChain();
 
-            isClicked = false;
+            if (type == InteractableItem.InteractiveType.INTERACT_ONCE)
+                GetComponent<Collider>().enabled = false;
         }
+    }
+
+    private void InteractConnected()
+    {
+        if (interactionChain != null)
+        {
+            for (int i = 0; i < interactionChain.Length; ++i)
+                interactionChain[i].Interact();
+        }
+    }
+
+    private void ProcessActivationChain()
+    {
+        if (activationChain != null)
+        {
+            for (int i = 0; i < activationChain.Length; ++i)
+                interactionChain[i].Activate();
+        }
+
     }
 }
