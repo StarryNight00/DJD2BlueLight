@@ -8,8 +8,11 @@ public class ticketTimer : MonoBehaviour
     //RELATED TO SOUND
     //MAKE OWN CLASS
 
-    public AudioSource Dong;
-    public AudioSource Ding;
+    public AudioSource soundSource;
+    public AudioClip ding;
+    public AudioClip dong;
+    public Animator animator;
+    public GameObject door;
 
     //private float  currentTime;
 
@@ -22,6 +25,8 @@ public class ticketTimer : MonoBehaviour
 
     private void Start()
     {
+        animator = door.GetComponent<Animator>();
+        soundSource.clip = dong;
         clockOneHour = 60.0f;
         currentTicket = Random.Range(1, 6);
         timeWait = 0;
@@ -31,6 +36,12 @@ public class ticketTimer : MonoBehaviour
     {
         UpdateTimeDisplay();
         NPCTimeWait();
+        CheckIfDone();
+        if(currentTicket == ticket)
+        {
+            soundSource.clip = ding;
+            soundSource.Play();
+        }
     }
 
     private void FixedUpdate()
@@ -61,6 +72,10 @@ public class ticketTimer : MonoBehaviour
             {
                 isWaiting = false;
                 currentTicket += 1;
+                if(currentTicket < 420)
+                {
+                    soundSource.Play();
+                }
             }
         }
     }
@@ -94,5 +109,13 @@ public class ticketTimer : MonoBehaviour
         Debug.Log("currentTicket " + currentTicket);
         Debug.Log("timeWait " + timeWait);
         */
+    }
+
+    private void CheckIfDone()
+    {
+        if(currentTicket >= ticket)
+        {
+            animator.SetTrigger("trigger");
+        }
     }
 }
