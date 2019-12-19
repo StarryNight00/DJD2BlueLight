@@ -51,6 +51,11 @@ public class ticketTimer : MonoBehaviour
         else
         {
             timeWait -= 1;
+            
+            if (Input.GetKeyDown("u"))
+            {
+                currentTicket = 420;
+            }
 
             if (timeWait <= 0)
             {
