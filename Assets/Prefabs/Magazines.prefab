@@ -10,13 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6214563619772838551}
   - component: {fileID: 6214563619772838548}
-<<<<<<< HEAD
   - component: {fileID: 238362516532069463}
   m_Layer: 9
-=======
-  - component: {fileID: 3814604524311235515}
-  m_Layer: 0
->>>>>>> sistemaSenha
   m_Name: Magazines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,11 +55,7 @@ MonoBehaviour:
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
-<<<<<<< HEAD
 --- !u!65 &238362516532069463
-=======
---- !u!65 &3814604524311235515
->>>>>>> sistemaSenha
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,13 +66,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-<<<<<<< HEAD
   m_Size: {x: 0.7, y: 0.2, z: 0.7}
   m_Center: {x: 0, y: 0.05, z: 0}
-=======
-  m_Size: {x: 0.58, y: 0.21, z: 0.52}
-  m_Center: {x: 0, y: 0.06, z: 0}
->>>>>>> sistemaSenha
 --- !u!1 &6214563620791392851
 GameObject:
   m_ObjectHideFlags: 0

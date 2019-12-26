@@ -17,7 +17,7 @@ public class ticketTimer : MonoBehaviour
     //private float  currentTime;
 
     public Text     timeCount;
-    private int     timeWait;
+    private float     timeWait;
     private int     currentTicket;
     private float   clockOneHour;
     private float   ticket;
@@ -30,7 +30,7 @@ public class ticketTimer : MonoBehaviour
         clockOneHour = 60.0f;
         currentTicket = Random.Range(1, 6);
         timeWait = 0;
-        ticket = 420;
+        ticket = 30;
     }
     private void Update()
     {
@@ -46,17 +46,17 @@ public class ticketTimer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (clockOneHour <= 0)
-            clockOneHour = 60;
-
-        clockOneHour -= Time.fixedDeltaTime;
+        // if (clockOneHour <= 0)
+        //     clockOneHour = 60;
+        // 
+        // clockOneHour -= Time.fixedDeltaTime;
     }
 
     private void NPCTimeWait()
     {
         if (isWaiting == false)
         {
-            timeWait = Random.Range(120, 360); //1 to 3 minutes
+            timeWait = Random.Range(60, 180); //1 to 3 minutes
             isWaiting = true;
         }
         else
