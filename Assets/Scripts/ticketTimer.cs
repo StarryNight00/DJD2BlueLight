@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ticketTimer : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class ticketTimer : MonoBehaviour
 
     //private float  currentTime;
 
-    public Text     timeCount;
-    private float     timeWait;
+    public TextMeshProUGUI timeCount;
+    private float          timeWait;
     private int     currentTicket;
     private float   clockOneHour;
     private float   ticket;
