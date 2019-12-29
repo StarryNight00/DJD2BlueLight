@@ -4,41 +4,46 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ticketTimer : MonoBehaviour
+public class TicketTimer : MonoBehaviour
 {
     //RELATED TO SOUND
     //MAKE OWN CLASS
 
-    public AudioSource soundSource;
-    public AudioClip ding;
-    public AudioClip dong;
-    public Animator animator;
-    public GameObject door;
+    public AudioSource  soundSource;
+    public AudioClip    ding;
+    public AudioClip    dong;
+    public Animator     animator;
+    public GameObject   door;
 
     //private float  currentTime;
 
-    public TextMeshProUGUI timeCount;
-    private float          timeWait;
-    private int     currentTicket;
-    private float   clockOneHour;
-    private float   ticket;
-    private bool    isWaiting;
+    public TextMeshProUGUI  timeCount;
+    public bool             canEnter;
+
+    private float           timeWait;
+    private int             currentTicket;
+    private float           ticket;
+    private float           fixedDeltaTimeUnit;
+    private bool            isWaiting;
+
 
     private void Start()
     {
         animator = door.GetComponent<Animator>();
-        soundSource.clip = dong;
-        clockOneHour = 60.0f;
         currentTicket = Random.Range(1, 6);
         timeWait = 0;
         ticket = 30;
+        canEnter = false;
+
+        isWaiting = true;
+
+        fixedDeltaTimeUnit = Time.fixedUnscaledDeltaTime;
     }
     private void Update()
     {
-        UpdateTimeDisplay();
         NPCTimeWait();
         CheckIfDone();
-        if(currentTicket == ticket)
+        if(canEnter == true)
         {
             soundSource.clip = ding;
             soundSource.Play();
@@ -47,26 +52,29 @@ public class ticketTimer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // if (clockOneHour <= 0)
-        //     clockOneHour = 60;
-        // 
-        // clockOneHour -= Time.fixedDeltaTime;
+        UpdateTimeDisplay();
     }
 
     private void NPCTimeWait()
     {
+        int seconds = Mathf.FloorToInt(60 * fixedDeltaTimeUnit);
+        int oneMinute = seconds * 60;
+        int threeMinutes = oneMinute * 3;
+
         if (isWaiting == false)
         {
-            timeWait = Random.Range(60, 180); //1 to 3 minutes
+            timeWait = Random.Range(oneMinute, threeMinutes); //1 to 3 minutes
+            timeWait = timeWait * 60;
             isWaiting = true;
         }
         else
         {
-            timeWait -= 1;
+            timeWait -= seconds;
             
             if (Input.GetKeyDown("u"))
             {
                 currentTicket = 420;
+                canEnter = true;
             }
 
             if (timeWait <= 0)
@@ -75,6 +83,7 @@ public class ticketTimer : MonoBehaviour
                 currentTicket += 1;
                 if(currentTicket < 420)
                 {
+                    soundSource.clip = dong;
                     soundSource.Play();
                 }
             }
@@ -83,14 +92,6 @@ public class ticketTimer : MonoBehaviour
 
     private void UpdateTimeDisplay()
     {
-        //currentTime = clockOneHour;
-
-        //int time = Mathf.FloorToInt(currentTime);
-        //minutesWanted * 60
-        //int minutes = time / 60;
-        //int seconds = time - (minutes * 60);
-
-
         if (currentTicket < 10)
         {
             timeCount.text = "00" + currentTicket;
@@ -103,15 +104,10 @@ public class ticketTimer : MonoBehaviour
         {
             timeCount.text = "" + currentTicket;
         }
-
-        /*
-        Debug.Log("clockOneHour " + clockOneHour);
-        Debug.Log("currentTime " + currentTime);
-        Debug.Log("currentTicket " + currentTicket);
-        Debug.Log("timeWait " + timeWait);
-        */
     }
 
+
+/////////////////---- ATTENTION
     private void CheckIfDone()
     {
         if(currentTicket >= ticket)

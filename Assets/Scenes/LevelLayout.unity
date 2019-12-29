@@ -476,6 +476,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   door: {fileID: 0}
   timeCount: {fileID: 0}
+  canEnter: 0
 --- !u!114 &143799945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +524,6 @@ GameObject:
   - component: {fileID: 150012951}
   - component: {fileID: 150012954}
   - component: {fileID: 150012953}
-  - component: {fileID: 150012952}
   m_Layer: 0
   m_Name: TckDspOuter
   m_TagString: Untagged
@@ -546,19 +546,6 @@ Transform:
   m_Father: {fileID: 650591172}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &150012952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150012950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &150012953
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -737,7 +724,8 @@ MonoBehaviour:
   dong: {fileID: 8300000, guid: aa6ffd54634e8654399b3f701b020c48, type: 3}
   animator: {fileID: 1784666184}
   door: {fileID: 1784666182}
-  timeCount: {fileID: 0}
+  timeCount: {fileID: 1269125360}
+  canEnter: 0
 --- !u!1 &241078262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1676,7 @@ Transform:
   - {fileID: 2013087352}
   - {fileID: 150012951}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &666579506
 PrefabInstance:
@@ -3113,7 +3101,7 @@ RectTransform:
   - {fileID: 143799943}
   - {fileID: 1470218968}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3344,7 +3332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269125358
 GameObject:
@@ -3358,7 +3346,7 @@ GameObject:
   - component: {fileID: 1269125361}
   - component: {fileID: 1269125360}
   m_Layer: 0
-  m_Name: CurretTicket
+  m_Name: CurrentNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3410,8 +3398,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4282721305
+  m_fontColor: {r: 0.10194909, g: 0.14485805, b: 0.2735849, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4069,7 +4057,7 @@ GameObject:
   - component: {fileID: 1455448218}
   - component: {fileID: 1455448217}
   m_Layer: 0
-  m_Name: DisplayTxt
+  m_Name: CurrentTicketTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4121,8 +4109,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4283053358
+  m_fontColor: {r: 0.18347275, g: 0.21022457, b: 0.2924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4666,7 +4654,7 @@ Transform:
   - {fileID: 1280575648}
   - {fileID: 241078263}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1648631716
 PrefabInstance:
@@ -4807,7 +4795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662129763
 GameObject:
@@ -5125,6 +5113,36 @@ Transform:
   - {fileID: 1413196795}
   m_Father: {fileID: 650591172}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1722611606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722611607}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1722611607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722611606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0102587, y: 3.1137664, z: -14.889001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1744011988 stripped
 RectTransform:
@@ -5764,7 +5782,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2088204415
 MonoBehaviour:
@@ -5879,8 +5897,6 @@ GameObject:
   - component: {fileID: 2133190911}
   - component: {fileID: 2133190914}
   - component: {fileID: 2133190913}
-  - component: {fileID: 2133190912}
-  - component: {fileID: 2133190915}
   m_Layer: 0
   m_Name: TicketDisplay
   m_TagString: Untagged
@@ -5903,19 +5919,6 @@ Transform:
   m_Father: {fileID: 150012951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2133190912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133190910}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2133190913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5962,24 +5965,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133190910}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2133190915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133190910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab81dd924c376c644ae18cdc55339aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundSource: {fileID: 1330421901}
-  ding: {fileID: 8300000, guid: 115caef3ac6ac9549b4044b82d666a9f, type: 3}
-  dong: {fileID: 8300000, guid: aa6ffd54634e8654399b3f701b020c48, type: 3}
-  animator: {fileID: 0}
-  door: {fileID: 0}
-  timeCount: {fileID: 1269125360}
 --- !u!1001 &574786786389495311
 PrefabInstance:
   m_ObjectHideFlags: 0
