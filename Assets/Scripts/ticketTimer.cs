@@ -35,7 +35,7 @@ public class TicketTimer : MonoBehaviour
         ticket = 30;
         canEnter = false;
 
-        isWaiting = true;
+        isWaiting = false;
 
         fixedDeltaTimeUnit = Time.fixedUnscaledDeltaTime;
     }
@@ -43,11 +43,6 @@ public class TicketTimer : MonoBehaviour
     {
         NPCTimeWait();
         CheckIfDone();
-        if(canEnter == true)
-        {
-            soundSource.clip = ding;
-            soundSource.Play();
-        }
     }
 
     private void FixedUpdate()
@@ -76,6 +71,13 @@ public class TicketTimer : MonoBehaviour
                 currentTicket = 420;
                 canEnter = true;
             }
+            else if (Input.GetKeyDown("y"))
+            {
+                currentTicket += 1;
+                soundSource.clip = dong;
+                soundSource.Play();
+                isWaiting = false;
+            }
 
             if (timeWait <= 0)
             {
@@ -85,6 +87,12 @@ public class TicketTimer : MonoBehaviour
                 {
                     soundSource.clip = dong;
                     soundSource.Play();
+                }
+                if (currentTicket == 420)
+                {
+                    soundSource.clip = ding;
+                    soundSource.Play();
+                    canEnter = true;
                 }
             }
         }
