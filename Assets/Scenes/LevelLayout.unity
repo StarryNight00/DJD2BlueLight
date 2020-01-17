@@ -3237,7 +3237,8 @@ MonoBehaviour:
   type: 2
   icon: {fileID: 0}
   itemName: 
-  requirementText: 
+  requirementText: Go speak to the one infront of the entrance, he'll give you the
+    rundown.
   interactionText: '*sigh* These two here dropped their tickets and they don''t know
     which is which...'
   isActive: 1
