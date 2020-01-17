@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -17,18 +17,24 @@ public class DialogueManager : MonoBehaviour
         _canvasManager = _canvas.GetComponent<CanvasManager>();
     }
 
-    public void ShowDialogue(Text line)
+    public void ShowDialogue(string line)
     {
-        _canvasManager.ShowInteractionPanel(line.text);
+        _canvasManager.ShowInteractionPanel(line);
     }
 
     public void InitiateDialogue(Dialogue dialogue)
     {
-        for (int i = 0; i < dialogue.lines.Length; i++)
+        for (int i = 0; i < dialogue.Speech.Length; i++)
         {
-            _lines.Enqueue(dialogue.lines[i]);
+            _lines.Enqueue(dialogue.Speech[i]);
         }
 
-        ShowDialogue(_canvasManager.interactionText);
+        for(int i = 0; i < _lines.Count; i++)
+        {
+            ShowDialogue(_lines.Dequeue());
+            // loop while primary mouse button is not pressed, which then
+            // updates the dialogue line
+            while (!Input.GetMouseButtonDown(0)) { }
+        }
     }
 }
