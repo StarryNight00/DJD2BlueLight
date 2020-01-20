@@ -50,4 +50,9 @@ public class Dialogue : ScriptableObject
         if (_currentLine < _speech.Length - 1) _currentLine++;
         else if (_currentLine == _speech.Length - 1) _currentLine = 0;
     }
+
+    public void ResetDialogueLine()
+    {
+        _currentLine = 0;
+    }
 }
