@@ -127,12 +127,6 @@ public class PlayerInteraction : MonoBehaviour
             canvasManager.ShowInteractionPanel(
                 _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
             Debug.Log("Line displayed");
-
-            //if(Input.GetMouseButtonDown(0)) 
-            //{
-            //    _currentNPC.Dialogue.IncrementDialogueLine();
-            //    Debug.Log("Dialogue line updated");
-            //}
         }
     }
 
