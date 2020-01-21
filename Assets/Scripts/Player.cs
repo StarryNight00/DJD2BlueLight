@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     //Variables
     private CharacterController controller;
-
+    private PlayerInteraction plyrInteraction;
     private Transform cameraTransform;
 
     private Vector3 velocity;
@@ -36,6 +36,10 @@ public class Player : MonoBehaviour
     private float velocityFactor;
 
     private bool jump;
+    [SerializeField] private bool _interacting;
+
+    // Properties
+    public bool Interacting { get; }
 
     //Game Updates
     private void UpdateAccelaration()
@@ -103,10 +107,16 @@ public class Player : MonoBehaviour
         cameraTransform.localEulerAngles = cameraRotation;
     }
 
+    public void SetInteractionState(bool state)
+    {
+        _interacting = state;
+    }
+
     //Engine Start
     public void Start()
     {
         controller = GetComponent<CharacterController>();
+        plyrInteraction = GetComponent<PlayerInteraction>();
         cameraTransform = GetComponentInChildren<Camera>().transform;
         acceleration = Vector3.zero;
         velocity = Vector3.zero;
@@ -116,16 +126,26 @@ public class Player : MonoBehaviour
     //Engine Updates
     public void FixedUpdate()
     {
-        UpdateVelocityFactor();
-        UpdateAccelaration();
-        UpdateVelocity();
+        if (!_interacting)
+        {
+            UpdateVelocityFactor();
+            UpdateAccelaration();
+            UpdateVelocity();
+        }
+        if (_interacting)
+        {
+            velocity = new Vector3();
+            acceleration = new Vector3();
+        }
         UpdatePosition();
     }
 
     public void Update()
     {
-        UpdateRotation();
-        UpdateHeadLook();
+        if (!_interacting)
+        {
+            UpdateRotation();
+            UpdateHeadLook();
+        }
     }
-
 }

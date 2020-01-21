@@ -12,15 +12,18 @@ public class PlayerInteraction : MonoBehaviour
     private List<InteractableItem> _inventory;
     private LayerMask _vocalNPCsLayer;
     private LayerMask _interactablesLayer;
+    private Player _player;
 
     public CanvasManager canvasManager;
 
     // ---------------------------TEST CODE HERE-------------------------------
     private NPC _currentNPC;
-    private bool _mouseClicked;
+
+    public NPC CurrentNPC { get; }
 
     private void Start()
     {
+        _player = GetComponentInParent<Player>();
         _vocalNPCsLayer = LayerMask.NameToLayer("VocalNPCs");
         _vocalNPCsLayer = LayerMask.NameToLayer("Interactables");
         _currentItem = null;
@@ -85,14 +88,13 @@ public class PlayerInteraction : MonoBehaviour
             Debug.Log("New interactive NPC is valid");
             SetCurrentNPC(newNPC);
         }
+        else if(newNPC == _currentNPC)
+        {
+            DisplaySpeech();
+        }
         else if (newNPC == null)
         {
             Debug.Log("New interactive NPC is invalid as it is null");
-            ClearCurrentNPC();
-        }
-        else
-        {
-            Debug.Log("New interactive NPC is invalid for unknown reasons");
             ClearCurrentNPC();
         }
     }
@@ -123,11 +125,23 @@ public class PlayerInteraction : MonoBehaviour
         {
             _currentNPC = newNPC;
 
-            Debug.Log("Current interactive NPC set, displaying dialogue");
-            canvasManager.ShowInteractionPanel(
-                _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
-            Debug.Log("Line displayed");
+            _player.SetInteractionState(true);
+
+            DisplaySpeech();
+            if (_currentNPC.Dialogue.CurrentLine ==
+                _currentNPC.Dialogue.Speech.Length - 1) 
+            {
+                _player.SetInteractionState(false);
+            }
         }
+    }
+
+    private void DisplaySpeech()
+    {
+        Debug.Log("Current interactive NPC set, displaying dialogue");
+        canvasManager.ShowInteractionPanel(
+            _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
+        Debug.Log("Line displayed");
     }
 
     private bool HasInteractionRequirements()
@@ -196,5 +210,11 @@ public class PlayerInteraction : MonoBehaviour
     private bool HasInInventory(InteractableItem item)
     {
         return _inventory.Contains(item);
+    }
+
+    public void IncrementDialogueLineOnButtonClick()
+    {
+        _currentNPC.Dialogue.IncrementDialogueLine();
+        Debug.Log("Line incremented");
     }
 }
