@@ -3014,7 +3014,15 @@ MonoBehaviour:
   requirementText: There is a breeze coming from this wall ...
   interactionText: With the things I have I could try to open it ...
   isActive: 1
-  interactionChain: []
+  interactionChain:
+  - {fileID: 1447539515}
+  - {fileID: 1255427259}
+  - {fileID: 1754056817}
+  - {fileID: 1301119138}
+  - {fileID: 473521618}
+  - {fileID: 876842257363899852}
+  - {fileID: 1253038316}
+  - {fileID: 3130864296698593610}
   activationChain:
   - {fileID: 1447539515}
   - {fileID: 1255427259}
@@ -3024,7 +3032,15 @@ MonoBehaviour:
   - {fileID: 876842257363899852}
   - {fileID: 1253038316}
   - {fileID: 3130864296698593610}
-  inventoryRequirements: []
+  inventoryRequirements:
+  - {fileID: 1447539515}
+  - {fileID: 1255427259}
+  - {fileID: 1754056817}
+  - {fileID: 1301119138}
+  - {fileID: 473521618}
+  - {fileID: 876842257363899852}
+  - {fileID: 1253038316}
+  - {fileID: 3130864296698593610}
 --- !u!65 &830535011
 BoxCollider:
   m_ObjectHideFlags: 0
