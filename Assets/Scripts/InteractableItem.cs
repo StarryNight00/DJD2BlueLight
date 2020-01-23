@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class responsible for the interactions allowed with items.
+/// </summary>
 public class InteractableItem : MonoBehaviour
 {
-    public enum InteractiveType { PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT }
 
-    public InteractiveType      type;
-    public Sprite               icon;
-    public string               itemName;
-    public string               requirementText;
-    public string               interactionText;
-    public bool                 isActive;
+    [SerializeField] private InteractiveType    type;
+    [SerializeField] private Sprite             icon;
+    [SerializeField] private string             itemName;
+    [SerializeField] private string             requirementText;
+    [SerializeField] private string             interactionText;
+    [SerializeField] private bool               isActive;
 
     public InteractableItem[]   interactionChain;
     public InteractableItem[]   activationChain;
@@ -39,7 +41,7 @@ public class InteractableItem : MonoBehaviour
             InteractConnected();
             ProcessActivationChain();
 
-            if (type == InteractableItem.InteractiveType.INTERACT_ONCE)
+            if (type == InteractiveType.INTERACT_ONCE)
                 GetComponent<Collider>().enabled = false;
         }
     }

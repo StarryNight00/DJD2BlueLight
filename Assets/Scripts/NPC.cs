@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class responsible for handling NPC dialogue.
+/// </summary>
 public class NPC : MonoBehaviour
 {
     [SerializeField] private Dialogue _dialogue;
