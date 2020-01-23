@@ -30,11 +30,7 @@ Work especially focussed on the "visual" component, such as creation of assets, 
 
 ### Describing Solution approach
 
-Blue Light is about the conflict of thought within a society. Two opposing sides try to bring a Neutral born child to their Faction through a series of interviews, introducing them to their ideals and values. The child - the Player - must decide for themselves which side they will be on.
-
-On one side, there's the Order Faction, which values total equality and integration of the member in their society. Order member share a hive-mind and there is no individuality, for true equal-ness only happens if everyone is the same.
-
-The other side of the coin is represented by the Freedom Faction, who believe that one should be themselves at all times. They have distinguishing personalities and, from mild to explosive, like to assert their ideas and manifest themselves.
+The Blue Light Project is a project that started at the DJD classes, with the idea of creating a walking simulator with 'conflict' in mind. Our project focusses on the thought conflict in a society, opposing two extremes of reality.
 
 When transposing these concepts to Unity, a priority was the dialogue system - developed by Pedro - as it allowed for the player to experience our idea and be introduced more and more to an imperfect and extreme world. Meanwhile, Catarina and Afonso focused on the script and level design to incorporate the dialogue on.
 
@@ -42,7 +38,7 @@ As for the visual component, Catarina was focussed more here, making the visual 
 
 Afonso focussed on the level design and programmed the `Menu` classes, along with their scenes. When pressing `ESC`, the player can exit to either the Start Menu and restart the game, or leave for the Desktop.
 
-During the game, as the player moves through the room, they have to talk to the others and collect items. The other members will introduce th ideologies t them, or put the Player on a path to find a secret ending and escape the interview.
+During the game, as the player moves through the room, they have to talk to the others and collect items. The other members will introduce the ideologies to them, or put the Player on a path to find a secret ending and escape the interview.
 
 We did not start this project with a specific pattern in mind. We can say we used the patterns that exist naturally within the Unity code, such has the `Update Pattern`. However, no specific pattern was used consciously.
 
