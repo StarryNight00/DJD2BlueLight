@@ -9,17 +9,17 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
 {
     // Serialized private crossHairNormal variable of GameObject type
-    [SerializeField] private GameObject crossHairNormal;
+    [SerializeField] private GameObject _crossHairNormal;
     // Serialized private crossHairInterqact variable of GameObject type
-    [SerializeField] private GameObject crossHairInteract;
+    [SerializeField] private GameObject _crossHairInteract;
     // Serialized private interactionPanel variable of GameObject type
-    [SerializeField] private GameObject interactionPanel;
+    [SerializeField] private GameObject _interactionPanel;
     // Serialized private choicePanel variable of GameObject type
-    [SerializeField] private GameObject choicePanel;
+    [SerializeField] private GameObject _choicePanel;
     // Serialized private nextButton variable of GameObject type
-    [SerializeField] private GameObject nextButton;
+    [SerializeField] private GameObject _nextButton;
     // Serialized private interactionText variable of GameObject type
-    [SerializeField] private Text       interactionText;
+    [SerializeField] private Text       _interactionText;
 
     /// <summary>
     /// Responsible for displaying the interaction panel with a specific
@@ -29,10 +29,10 @@ public class CanvasManager : MonoBehaviour
     /// <param name="interactionMessage">Message to be displayed</param>
     public void ShowInteractionPanel(string interactionMessage)
     {
-        interactionText.text = interactionMessage;
-        interactionPanel.SetActive(true);
-        crossHairNormal.SetActive(false);
-        crossHairInteract.SetActive(true);
+        _interactionText.text = interactionMessage;
+        _interactionPanel.SetActive(true);
+        _crossHairNormal.SetActive(false);
+        _crossHairInteract.SetActive(true);
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void HideInteractionPanel()
     {
-        interactionPanel.SetActive(false);
-        crossHairInteract.SetActive(false);
-        crossHairNormal.SetActive(true);
+        _interactionPanel.SetActive(false);
+        _crossHairInteract.SetActive(false);
+        _crossHairNormal.SetActive(true);
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void ShowChoicePanel()
     {
-        choicePanel.SetActive(true);
+        _choicePanel.SetActive(true);
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void HideChoicePanel()
     {
-        choicePanel.SetActive(false);
+        _choicePanel.SetActive(false);
     }
 
     /// <summary>
@@ -68,7 +68,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void ShowNextButton()
     {
-        nextButton.SetActive(true);
+        _nextButton.SetActive(true);
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void HideNextButton()
     {
-        nextButton.SetActive(false);
+        _nextButton.SetActive(false);
     }
 
     /// <summary>

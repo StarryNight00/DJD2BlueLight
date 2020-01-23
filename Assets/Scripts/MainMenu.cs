@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // Serialized private AudioSource variable
-    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioSource _soundSource;
     // Serialized private AudioClip variable
-    [SerializeField] private AudioClip ding;
+    [SerializeField] private AudioClip _ding;
     // Serialized private AudioClip variable
-    [SerializeField] private AudioClip dong;
+    [SerializeField] private AudioClip _dong;
 
     /// <summary>
     /// Responsible for loading the game scene.
@@ -21,9 +21,9 @@ public class MainMenu : MonoBehaviour
 
         // Assigns _dong AudioClip to the _soundSource.clip
         // variable
-        soundSource.clip = dong;
+        _soundSource.clip = _dong;
         // plays _soundSource's current clip
-        soundSource.Play();
+        _soundSource.Play();
         // load game scene
         SceneManager.LoadScene(1);
     }
@@ -35,9 +35,9 @@ public class MainMenu : MonoBehaviour
     {
         // Assigns _ding AudioClip to the _soundSource.clip
         // variable
-        soundSource.clip = ding;
+        _soundSource.clip = _ding;
         // plays _soundSource's current clip
-        soundSource.Play();
+        _soundSource.Play();
         // quit the application
         Application.Quit();
     }
@@ -49,8 +49,8 @@ public class MainMenu : MonoBehaviour
     {
         // Assigns _dong AudioClip to the _soundSource.clip
         // variable
-        soundSource.clip = dong;
+        _soundSource.clip = _dong;
         // plays _soundSource's current clip
-        soundSource.Play();
+        _soundSource.Play();
     }
 }

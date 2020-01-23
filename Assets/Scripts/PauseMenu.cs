@@ -8,13 +8,13 @@ public class PauseMenu : MonoBehaviour
 {
     private bool _isPaused;
     // Serialized private GameObject, used to contain the pause panel
-    [SerializeField] private GameObject Pause;
+    [SerializeField] private GameObject _pause;
     // Serialized private AudioSource variable
-    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioSource _soundSource;
     // Serialized private AudioClip variable
-    [SerializeField] private AudioClip ding;
+    [SerializeField] private AudioClip _ding;
     // Serialized private AudioClip variable
-    [SerializeField] private AudioClip dong;
+    [SerializeField] private AudioClip _dong;
 
     /// <summary>
     /// Responsible for exiting to the Main Menu scene.
@@ -23,9 +23,9 @@ public class PauseMenu : MonoBehaviour
     {
         // Assign _dong AudioClip to the _soundSource.clip
         // variable
-        soundSource.clip = dong;
+        _soundSource.clip = _dong;
         // play _soundSource's current clip
-        soundSource.Play();
+        _soundSource.Play();
         // load Main Menu scene
         SceneManager.LoadScene(0);
     }
@@ -37,9 +37,9 @@ public class PauseMenu : MonoBehaviour
     {
         // Assign _ding AudioClip to the _soundSource.clip
         // variable
-        soundSource.clip = ding;
+        _soundSource.clip = _ding;
         // play _soundSource's current clip
-        soundSource.Play();
+        _soundSource.Play();
         // quit application
         Application.Quit();
     }
@@ -53,14 +53,14 @@ public class PauseMenu : MonoBehaviour
         if (_isPaused)
         {
             // set Pause object's active state to true
-            Pause.SetActive(true);
+            _pause.SetActive(true);
             // assign 0f to timeScale, so the player cant move while on pause
             Time.timeScale = 0f;
         }
         else
         {
             // set Pause object's active state to false
-            Pause.SetActive(false);
+            _pause.SetActive(false);
             // assign 1f to timeScale, so the player can move again
             Time.timeScale = 1f;
         }

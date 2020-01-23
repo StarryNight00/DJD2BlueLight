@@ -25,11 +25,11 @@ public class Player : MonoBehaviour
 
 
     // private CharacterController variable for the character's controller
-    private CharacterController controller;
+    private CharacterController _controller;
     // private PlayerInteraction variable for playerInteraction
-    private PlayerInteraction plyrInteraction;
+    private PlayerInteraction _plyrInteraction;
     // private Transform variable for camera's transform
-    private Transform cameraTransform;
+    private Transform _cameraTransform;
     // private Karma variable for the player's associated karma
     private Karma _playerKarma;
     // private Faction variable for the player's current Faction
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         // fixedDeltaTime
         Vector3 motion = velocity * Time.fixedDeltaTime;
         // call move method of controller, giving it the motion Vector3
-        controller.Move(transform.TransformVector(motion));
+        _controller.Move(transform.TransformVector(motion));
     }
 
     /// <summary>
@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
     {
         // declare and initialize cameraRotation with localEulerAngles from
         // cameraTransform
-        Vector3 cameraRotation = cameraTransform.localEulerAngles;
+        Vector3 cameraRotation = _cameraTransform.localEulerAngles;
         // assign input from Mouse Y axis times angular velocity factor to
         // cameraRotation.x
         cameraRotation.x -= Input.GetAxis("Mouse Y") * 
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
             cameraRotation.x = Mathf.Min(cameraRotation.x, 
                 MAX_HEADLOOK_ROTATION);
         // assign cameraRotation to cameraTransform.localEulerAngles
-        cameraTransform.localEulerAngles = cameraRotation;
+        _cameraTransform.localEulerAngles = cameraRotation;
     }
 
     /// <summary>
@@ -176,9 +176,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Start()
     {
-        controller = GetComponent<CharacterController>();
-        plyrInteraction = GetComponent<PlayerInteraction>();
-        cameraTransform = GetComponentInChildren<Camera>().transform;
+        _controller = GetComponent<CharacterController>();
+        _plyrInteraction = GetComponent<PlayerInteraction>();
+        _cameraTransform = GetComponentInChildren<Camera>().transform;
         acceleration = Vector3.zero;
         velocity = Vector3.zero;
         velocityFactor = WALK_VELOCITY_FACTOR;
