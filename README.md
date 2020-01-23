@@ -28,7 +28,15 @@ Work especially focussed on the "visual" component, such as creation of assets, 
 
 ### Describing Solution approach
 
-kkk
+Blue Light is about the conflict of thought within a society. Two opposing sides try to bring a Neutral born child to their Faction through a series of interviews, introducing them to their ideals and values. The child - the Player - must decide for themselves which side they will be on.
+
+On one side, there's the Order Faction, which values total equality and integration of the member in their society. Order member share a hive-mind and there is no individuality, for true equal-ness only happens if everyone is the same.
+
+The other side of the coin is represented by the Freedom Faction, who believe that one should be one-self at all times. They have distinguishing personalities and, from mild to explosive, like to assert their ideas and manifest themselves.
+
+When transposing these concepts to Unity, a priority was the dialogue system - developed by Pedro - as it allowed for the player to experience our idea and be introduced more and more to an imperfect and extreme world. Meanwhile, Catarina and Afonso focused on the script and level design.
+
+As for the visual component, Catarina was focussed more here, making the visual assets and 
 
 ### UML Diagram
 
