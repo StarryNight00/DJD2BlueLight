@@ -31,6 +31,8 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         Debug.Log("Begin update");
+        Debug.Log($"Order Karma: {_player.PlayerKarma.OrderKarma} " +
+            $"Freedom Karma: {_player.PlayerKarma.FreedomKarma}");
         CheckForInteractive();
         CheckForPlayerInteraction();
     }
@@ -132,7 +134,7 @@ public class PlayerInteraction : MonoBehaviour
     private void DisplaySpeech()
     {
         Debug.Log($"Player Karma - Order: {_player.PlayerKarma.OrderKarma}" +
-            $"Freedom: {_player.PlayerKarma.OrderKarma}");
+            $"Freedom: {_player.PlayerKarma.FreedomKarma}");
         Debug.Log("Current interactive NPC set, displaying dialogue");
         _canvasManager.ShowInteractionPanel(
             _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
