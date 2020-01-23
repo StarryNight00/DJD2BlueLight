@@ -56,4 +56,6 @@ The following references where used during this project.
 
 **[2]** Our classmate Leandro Brás helped with some concept and basic logic for the dialog system.
 
-**[2]** Desenvolvimento de Jogos Digitais classes. The code developed in these classes was used as a stepping stone for most of the code that was common to the ideas presented.
+**[3]** Desenvolvimento de Jogos Digitais classes. The code developed in these classes was used as a stepping stone for most of the code that was common to the ideas presented.
+
+**[4]** Unity and Microsoft's C# APIs.
