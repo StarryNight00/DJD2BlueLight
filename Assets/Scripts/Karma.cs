@@ -39,9 +39,9 @@ public class Karma
 
     public void DetermineFaction()
     {
-        if (_orderKarma - 20 > _freedomKarma) 
+        if (_orderKarma - 20 > _freedomKarma && _orderKarma > 20) 
             _player.SetPlayerFaction(Faction.Order);
-        else if (_freedomKarma - 20 > _orderKarma) 
+        else if (_freedomKarma - 20 > _orderKarma && _freedomKarma > 20) 
             _player.SetPlayerFaction(Faction.Freedom);
     }
 }
