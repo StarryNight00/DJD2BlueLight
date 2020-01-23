@@ -202,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe69f7fe9edf7f46b0f36c84fa6f02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPaused: 0
   Pause: {fileID: 1233660906}
   soundSource: {fileID: 19847264}
   ding: {fileID: 8300000, guid: 115caef3ac6ac9549b4044b82d666a9f, type: 3}
@@ -451,12 +450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: 
-  interactionText: I'm watering the flowers, go away, kid. Eh eh eh...
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
@@ -774,13 +772,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab81dd924c376c644ae18cdc55339aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
-  ding: {fileID: 0}
-  dong: {fileID: 0}
-  animator: {fileID: 0}
-  door: {fileID: 0}
-  timeCount: {fileID: 0}
+  soundSource: {fileID: 1330421901}
+  ding: {fileID: 8300000, guid: 115caef3ac6ac9549b4044b82d666a9f, type: 3}
+  dong: {fileID: 8300000, guid: aa6ffd54634e8654399b3f701b020c48, type: 3}
+  animator: {fileID: 1784666184}
+  door: {fileID: 1784666182}
+  timeCount: {fileID: 1269125360}
   canEnter: 0
+  timeWait: 0
+  currentTicket: 0
+  ticket: 0
+  fixedDeltaTimeUnit: 0
+  isWaiting: 0
 --- !u!114 &143799945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,6 +1033,11 @@ MonoBehaviour:
   door: {fileID: 1784666182}
   timeCount: {fileID: 1269125360}
   canEnter: 0
+  timeWait: 0
+  currentTicket: 0
+  ticket: 0
+  fixedDeltaTimeUnit: 0
+  isWaiting: 0
 --- !u!1 &241078262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,12 +3023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: I need a ticket to enter...
-  interactionText: Swipe the ticket
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain:
   - {fileID: 1585861565}
   activationChain:
@@ -3123,7 +3130,7 @@ Transform:
   - {fileID: 689430375}
   - {fileID: 1585861563}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653908244
 GameObject:
@@ -4077,12 +4084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: There is a breeze coming from this wall ...
-  interactionText: With the things I have I could try to open it ...
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain:
   - {fileID: 1447539515}
   - {fileID: 1255427259}
@@ -4467,12 +4473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  icon: {fileID: 0}
-  itemName: Case file of Order NPC
-  requirementText: 
-  interactionText: Order member plotted a series of almost ritualistic murders.
-  isActive: 0
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
@@ -4494,15 +4499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: Where did I leave that pen...
-  interactionText: Oh you found it! My pen! Thank you I can't really finish assessing
-    you all without it... Now, protocol demands that we tell you this. We, the Order
-    faction, represent union and structure, we are all equal and we share the same
-    goal. Keep that in mind if you want to join us.
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain:
   - {fileID: 1447539515}
@@ -5493,13 +5494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: Why is it so cold here?
-  interactionText: Oh, you fixed it! Thank you so much ... Wait why do I feel a cold
-    breeze?
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain:
   - {fileID: 473521618}
@@ -5951,7 +5950,7 @@ RectTransform:
   - {fileID: 19847262}
   - {fileID: 2019435454}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6503,7 +6502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269125358
 GameObject:
@@ -7058,15 +7057,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: '*hmmmmmmmm* I''m feeling rather thirsty... *wink*'
-  interactionText: "It's warm... Oh well I did make you go get it for me so we'll
-    call it even. You see the Freedom faction aren\u2019t ruled by others, each one
-    of us is unique in his own way. We like to stand out from the mob, you know? Hence
-    why I made you get that drink for me! I just didn't want to move..."
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain:
   - {fileID: 1754056817}
@@ -7840,14 +7835,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: I seem to have dropped my glasses... Hey can you help me find them?
-  interactionText: Thank you! I literally can not see without these. Not to mention
-    I have to finish reading all these notes I took about the factions. That guy said
-    that if I join the Order I can read minds. I hope I can join them!
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain:
   - {fileID: 3130864296698593610}
@@ -8547,12 +8539,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: 
-  interactionText: 
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
@@ -8571,6 +8562,7 @@ MonoBehaviour:
   soundSource: {fileID: 1158589592}
   steps: {fileID: 0}
   door: {fileID: 8300000, guid: ebc3590380b6f3043bf80219c57bad24, type: 3}
+  cc: {fileID: 0}
 --- !u!1001 &1592298342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8669,14 +8661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: I seem to have dropped my glasses... Hey can you help me find them?
-  interactionText: Thank you! I literally can not see without these. Not to mention
-    I have to finish reading all these notes I took about the factions. That guy said
-    that if I join the Order I can read minds. I hope I can join them!
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain:
   - {fileID: 3130864296698593610}
@@ -8830,7 +8819,7 @@ Transform:
   - {fileID: 1280575648}
   - {fileID: 241078263}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1635656643
 PrefabInstance:
@@ -9130,7 +9119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662129763
 GameObject:
@@ -9490,49 +9479,6 @@ Transform:
   m_Father: {fileID: 650591172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1722611606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1722611607}
-  - component: {fileID: 1722611608}
-  m_Layer: 0
-  m_Name: Cursor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1722611607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722611606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0102587, y: 3.1137664, z: -14.889001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1722611608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722611606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87e7d3f8d30c18a44b3c3f626810e188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1742536702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9857,6 +9803,7 @@ MonoBehaviour:
   soundSource: {fileID: 1829777988}
   steps: {fileID: 0}
   door: {fileID: 8300000, guid: ebc3590380b6f3043bf80219c57bad24, type: 3}
+  cc: {fileID: 0}
 --- !u!1 &1829548062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1734953004900154268, guid: 80f78bc4ca18d9b438b3a595a99e6112,
@@ -9881,15 +9828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  icon: {fileID: 0}
-  itemName: 
-  requirementText: 
-  interactionText: It seems you made it out. Well I know you might be confused but
-    you did the right choice in coming here. Neither Order nor Freedom are truly right
-    in the end. Only by having both can we truly coexist. Open that door and let's
-    go.
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
@@ -10038,12 +9981,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b862562e22f0b142a9c9cc51959abad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  icon: {fileID: 0}
-  itemName: Case file of freedom NPC
-  requirementText: 
-  interactionText: Freedom member murdered his father's killers with a crowbar.
-  isActive: 1
+  _type: 0
+  _itemName: 
+  _requirementText: 
+  _interactionText: 
+  _isActive: 0
   interactionChain: []
   activationChain: []
   inventoryRequirements: []
@@ -11066,7 +11008,7 @@ Transform:
   - {fileID: 929541301}
   - {fileID: 1331448958}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2088204415
 MonoBehaviour:
@@ -11108,7 +11050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundSource: {fileID: 929541302}
   steps: {fileID: 8300000, guid: 206f689f893116a4daf37fa20902532e, type: 3}
-  door: {fileID: 0}
+  door: {fileID: 8300000, guid: ebc3590380b6f3043bf80219c57bad24, type: 3}
+  cc: {fileID: 0}
 --- !u!1001 &2099457479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12411,11 +12354,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magazines
       objectReference: {fileID: 0}
-    - target: {fileID: 6214563619772838548, guid: 251182188b365524189e6d5f668c39d9,
-        type: 3}
-      propertyPath: isActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6214563619772838551, guid: 251182188b365524189e6d5f668c39d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12469,6 +12407,11 @@ PrefabInstance:
     - target: {fileID: 6214563619772838551, guid: 251182188b365524189e6d5f668c39d9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214563619772838548, guid: 251182188b365524189e6d5f668c39d9,
+        type: 3}
+      propertyPath: isActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

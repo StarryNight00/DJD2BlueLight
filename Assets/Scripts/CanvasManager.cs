@@ -10,7 +10,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject interactionPanel;
     [SerializeField] private GameObject choicePanel;
     [SerializeField] private GameObject nextButton;
-    [SerializeField] private Text interactionText;
+    [SerializeField] private Text       interactionText;
 
 
     public void ShowInteractionPanel(string interactionMessage)
@@ -20,6 +20,7 @@ public class CanvasManager : MonoBehaviour
         crossHairNormal.SetActive(false);
         crossHairInteract.SetActive(true);
     }
+
     public void HideInteractionPanel()
     {
         interactionPanel.SetActive(false);

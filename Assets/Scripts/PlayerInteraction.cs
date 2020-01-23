@@ -138,14 +138,14 @@ public class PlayerInteraction : MonoBehaviour
             // sets hasRequirements bool to true
             _hasRequirements = true;
             // shows interaction panel with interaction text
-            _canvasManager.ShowInteractionPanel(_currentItem.interactionText);
+            _canvasManager.ShowInteractionPanel(_currentItem.InteractionText);
         }
         else
         {
             // sets hasRequirements bool to false
             _hasRequirements = false;
             // shows interaction panel with requirement text
-            _canvasManager.ShowInteractionPanel(_currentItem.requirementText);
+            _canvasManager.ShowInteractionPanel(_currentItem.RequirementText);
         }
     }
 
@@ -219,7 +219,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         // if statement that checks if _currentItem's requirement text is null
         // and returns true if it is
-        if (_currentItem.requirementText == null)
+        if (_currentItem.RequirementText == null)
             return true;
         // for loop that checks if any items in the player's inventory are the
         // required items for interaction and returns false in that case
@@ -259,7 +259,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _currentItem != null)
         {
             // if statement that checks if _currentItem's type is PICKABLE
-            if (_currentItem.type == InteractableItem.InteractiveType.PICKABLE)
+            if (_currentItem.Type == InteractiveType.PICKABLE)
                 // picks up the item, adding to inventory
                 Pick();
             else
