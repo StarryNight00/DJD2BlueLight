@@ -32,7 +32,7 @@ public class TicketTimer : MonoBehaviour
         animator = door.GetComponent<Animator>();
         currentTicket = Random.Range(1, 6);
         timeWait = 0;
-        ticket = 30;
+        ticket = 420;
         canEnter = false;
 
         isWaiting = false;
@@ -69,6 +69,8 @@ public class TicketTimer : MonoBehaviour
             if (Input.GetKeyDown("u"))
             {
                 currentTicket = 420;
+                soundSource.clip = ding;
+                soundSource.Play();
                 canEnter = true;
             }
             else if (Input.GetKeyDown("y"))
