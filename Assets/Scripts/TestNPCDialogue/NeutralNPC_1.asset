@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154b782b764b1642ae1ef2ae803a83f, type: 3}
+  m_Name: NeutralNPC_1
+  m_EditorClassIdentifier: 
+  _speech:
+  - It just happened! I-i-i don't know if this is my ticket... Maybe you could help
+    me? I'm kind of freaking out over here...
+  - "I-i-i think it's mine can you give it to me please?... You believe me right???\n1
+    - You sound more plausible than the other one\t2 - I don't think so buddy\t3 -
+    I don't know"
+  - Thank you so much!!!!
+  - I'm telling the truth! why w-w-won't you believe me?
+  - Ah cmon! If you don't want to help why bother!
+  choiceLines: 01000000
+  _currentLine: 0
+  _currentChoice: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154b782b764b1642ae1ef2ae803a83f, type: 3}
+  m_Name: Interview
+  m_EditorClassIdentifier: 
+  _speech:
+  - 'Freeedom Interviewer: Hello and welcome to the interview.
+
+    Order Interviewer: We will be your interviewers for today, but despite this task
+    we will also be judging you accordingly, so keep that in mind when you do anything.'
+  - 'FI: We ahve been watching as you made decisions, whilst you waited for your turn
+    and we have monitored your every action.
+
+    OI: In other words we have already come to a decision but it can still change.'
+  - 'FI: Incase you didn''t read the tow folders in front of you they both describe
+    a heinous crime.
+
+    OI: Both those crimes were commited by a member of each faction.'
+  - 'FI: You are going to choose which one of them dies.
+
+    OI: The Freedom member murdered his father''s killers. The Order member plotted
+    a series of almost ritualistic murders.
+
+'
+  - "OI & FI: So which one deserves to die?\n1 - The Order member\t2 - The Freedom
+    member\t3 - Both of them"
+  - 'FI: Very well your choice has been made. You shall be redirected to your faction''s
+    area soon.'
+  - 'OI: Very well your choice has been made. You shall be redirected to your faction''s
+    area soon.'
+  - 'FI: Did you actually listen to us?
+
+    OI: Just leave... Someone will come get you...'
+  choiceLines: 04000000
+  _currentLine: 0
+  _currentChoice: 0
