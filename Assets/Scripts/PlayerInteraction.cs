@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,75 +7,159 @@ public class PlayerInteraction : MonoBehaviour
 {
     private const float MAX_INTERACTION_DISTANCE = 2.5f;
 
-    private InteractableItem _currentInteractive;
+    private InteractableItem _currentItem;
     private bool _hasRequirements;
     private Transform _cameraTransform;
     private List<InteractableItem> _inventory;
-    private LayerMask _vocalNPCsLayer;
-    private LayerMask _interactablesLayer;
+    private Player _player;
 
-    public CanvasManager canvasManager;
+    [SerializeField] private CanvasManager _canvasManager;
+
+    // ---------------------------TEST CODE HERE-------------------------------
+    private NPC _currentNPC;
+
+    public NPC CurrentNPC { get; }
 
     private void Start()
     {
-        _vocalNPCsLayer = LayerMask.NameToLayer("VocalNPCs");
-        _vocalNPCsLayer = LayerMask.NameToLayer("Interactables");
-        _currentInteractive = null;
+        _player = GetComponentInParent<Player>();
+        _currentItem = null;
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _inventory = new List<InteractableItem>();
     }
     private void Update()
     {
+        Debug.Log("Begin update");
         CheckForInteractive();
         CheckForPlayerInteraction();
     }
 
     private void CheckForInteractive()
     {
+        Debug.Log("Checking for any interactive");
         if (Physics.Raycast(_cameraTransform.position,
                             _cameraTransform.forward,
                             out RaycastHit hitInfo,
                             MAX_INTERACTION_DISTANCE))
         {
-            InteractableItem newInteractive = hitInfo.
-                             collider.GetComponent<InteractableItem>();
+            if (hitInfo.collider.TryGetComponent<InteractableItem>(
+                out InteractableItem newItem))
+            {
+                Debug.Log("Found interactive item");
+                CheckNewItem(newItem);
+            }
+            if (hitInfo.collider.TryGetComponent<NPC>(out NPC newNPC))
+            {
+                Debug.Log("Found interactive NPC");
+                CheckNewNPC(newNPC);
+            }
+        }
+        else _canvasManager.HideInteractionPanel();
+    }
 
-            if (newInteractive != null && newInteractive != _currentInteractive)
-            {
-                SetCurrentInteractive(newInteractive);
-            }
-            else if (newInteractive = null)
-            {
-                ClearCurrentInteractive();
-            }
+    private void CheckNewItem(InteractableItem newItem)
+    {
+        Debug.Log("Start checking of new interactive item");
+        if (newItem != null && newItem != _currentItem)
+        {
+            Debug.Log("New interactive item is valid");
+            SetCurrentInteractive(newItem);
+        }
+        else if (newItem == null)
+        {
+            Debug.Log("New interactive item is invalid as it is null");
+            ClearCurrentInteractive();
         }
         else
         {
+            Debug.Log("New interactive item is invalid for unknown reasons");
             ClearCurrentInteractive();
         }
     }
 
-    private void SetCurrentInteractive(InteractableItem newInteractive)
+    private void CheckNewNPC(NPC newNPC)
     {
-        _currentInteractive = newInteractive;
-        if (HasInteractionRequirements())
+        Debug.Log("Start checking of new interactive NPC");
+        if (newNPC != null && newNPC != _currentNPC)
         {
-            _hasRequirements = true;
-            canvasManager.ShowInteractionPanel(_currentInteractive.interactionText);
+            Debug.Log("New interactive NPC is valid");
+            SetCurrentNPC(newNPC);
+        }
+        else if (newNPC == _currentNPC)
+        {
+            DisplaySpeech();
         }
         else
         {
+            Debug.Log("New interactive NPC is invalid as it is null");
+            ClearCurrentNPC();
+        }
+    }
+
+    private void SetCurrentInteractive(InteractableItem newItem)
+    {
+        _currentItem = newItem;
+        Debug.Log("Current interactive item set, checking requirements");
+        if (HasInteractionRequirements())
+        {
+            Debug.Log("Item interaction requirements met; Interacting");
+            _hasRequirements = true;
+            _canvasManager.ShowInteractionPanel(_currentItem.interactionText);
+        }
+        else
+        {
+            Debug.Log("Item interaction requirements not met; Displaying" +
+                "requirements");
             _hasRequirements = false;
-            canvasManager.ShowInteractionPanel(_currentInteractive.requirementText);
+            _canvasManager.ShowInteractionPanel(_currentItem.requirementText);
+        }
+    }
+
+    // -----------------------------TEST CODE HERE-----------------------------
+    private void SetCurrentNPC(NPC newNPC)
+    {
+        if (newNPC != null)
+        {
+            _currentNPC = newNPC;
+
+            _player.SetInteractionState(true);
+
+            DisplaySpeech();
+        }
+    }
+
+    private void DisplaySpeech()
+    {
+
+        Debug.Log("Current interactive NPC set, displaying dialogue");
+        _canvasManager.ShowInteractionPanel(
+            _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
+        Debug.Log("Line displayed");
+
+        _canvasManager.ShowNextButton();
+        _canvasManager.HideChoicePanel();
+
+        if(_currentNPC.Dialogue.CurrentLine ==
+            _currentNPC.Dialogue.ChoiceLines[
+                _currentNPC.Dialogue.CurrentChoice])
+        {
+            _canvasManager.HideNextButton();
+            _canvasManager.ShowChoicePanel();
+        }
+
+        if (_currentNPC.Dialogue.CurrentLine ==
+            _currentNPC.Dialogue.Speech.Length - 1)
+        {
+            _player.SetInteractionState(false);
         }
     }
 
     private bool HasInteractionRequirements()
     {
-        if (_currentInteractive.requirementText == null)
+        if (_currentItem.requirementText == null)
             return true;
-        for (int i = 0; i < _currentInteractive.activationChain.Length; ++i)
-            if (!HasInInventory(_currentInteractive.activationChain[i]))
+        for (int i = 0; i < _currentItem.activationChain.Length; ++i)
+            if (!HasInInventory(_currentItem.activationChain[i]))
                 return false;
 
         return true;
@@ -82,15 +167,21 @@ public class PlayerInteraction : MonoBehaviour
 
     private void ClearCurrentInteractive()
     {
-        _currentInteractive = null;
-        canvasManager.HideInteractionPanel();
+        _currentItem = null;
+        //_canvasManager.HideInteractionPanel();
+    }
+
+    private void ClearCurrentNPC()
+    {
+        _currentNPC = null;
+        //_canvasManager.HideInteractionPanel();
     }
 
     private void CheckForPlayerInteraction()
     {
-        if (Input.GetMouseButtonDown(0) && _currentInteractive != null)
+        if (Input.GetMouseButtonDown(0) && _currentItem != null)
         {
-            if (_currentInteractive.type == InteractableItem.InteractiveType.PICKABLE)
+            if (_currentItem.type == InteractableItem.InteractiveType.PICKABLE)
                 Pick();
             else
                 Interact();
@@ -99,18 +190,18 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Pick()
     {
-        AddToInventory(_currentInteractive);
-        _currentInteractive.gameObject.SetActive(false);
+        AddToInventory(_currentItem);
+        _currentItem.gameObject.SetActive(false);
     }
 
     private void Interact()
     {
         if (_hasRequirements)
         {
-            for (int i = 0; i < _currentInteractive.inventoryRequirements.Length; ++i)
-                RemoveFromInventory(_currentInteractive.inventoryRequirements[i]);
+            for (int i = 0; i < _currentItem.inventoryRequirements.Length; ++i)
+                RemoveFromInventory(_currentItem.inventoryRequirements[i]);
 
-            _currentInteractive.Interact();
+            _currentItem.Interact();
         }
     }
 
@@ -129,5 +220,17 @@ public class PlayerInteraction : MonoBehaviour
     private bool HasInInventory(InteractableItem item)
     {
         return _inventory.Contains(item);
+    }
+
+    public void IncrementDialogueLineOnButtonClick()
+    {
+        _currentNPC.Dialogue.IncrementDialogueLine();
+        Debug.Log("Line incremented");
+    }
+
+    public void UpdateDialogueWithChoiceOnClick(int choice)
+    {
+        _currentNPC.Dialogue.UpdateDialogueWithChoice(choice);
+        Debug.Log("Line incremented");
     }
 }

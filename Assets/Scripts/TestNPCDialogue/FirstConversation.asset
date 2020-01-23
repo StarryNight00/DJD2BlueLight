@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154b782b764b1642ae1ef2ae803a83f, type: 3}
+  m_Name: FirstConversation
+  m_EditorClassIdentifier: 
+  _speech:
+  - Y r u gae?
+  - I am n0t gae
+  - "U r gae\n1 - No u\t2 - ur mom\t3 - yer dad"
+  - "Lezebiane?\t"
+  - Homoseckzuale?
+  - Then...wu iz gae?
+  choiceLines: 02000000
+  _currentLine: 0
+  _choice: 0

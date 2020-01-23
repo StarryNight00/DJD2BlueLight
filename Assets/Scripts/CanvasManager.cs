@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
-    public GameObject crossHairNormal;
-    public GameObject crossHairInteract;
-    public GameObject interactionPanel;
-    public Text interactionText;
+    [SerializeField] private GameObject crossHairNormal;
+    [SerializeField] private GameObject crossHairInteract;
+    [SerializeField] private GameObject interactionPanel;
+    [SerializeField] private GameObject choicePanel;
+    [SerializeField] private GameObject nextButton;
+    [SerializeField] private Text interactionText;
+
 
     public void ShowInteractionPanel(string interactionMessage)
     {
@@ -24,11 +27,30 @@ public class CanvasManager : MonoBehaviour
         crossHairNormal.SetActive(true);
     }
 
+    public void ShowChoicePanel()
+    {
+        choicePanel.SetActive(true);
+    }
+
+    public void HideChoicePanel()
+    {
+        choicePanel.SetActive(false);
+    }
+
+    public void ShowNextButton()
+    {
+        nextButton.SetActive(true);
+    }
+
+    public void HideNextButton()
+    {
+        nextButton.SetActive(false);
+    }
+
     public void Start()
     {
-
         HideInteractionPanel();
-
-        //ShowInteractionPanel("dabadiiii");
+        HideChoicePanel();
+        HideNextButton();
     }
 }
