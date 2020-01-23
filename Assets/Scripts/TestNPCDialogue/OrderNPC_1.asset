@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154b782b764b1642ae1ef2ae803a83f, type: 3}
+  m_Name: OrderNPC_1
+  m_EditorClassIdentifier: 
+  _speech:
+  - 'Welcome to the interview center! '
+  - Today you will be evaluated based on your choices. Depending on said evaluations
+    you will be placed into one of the two factions, Order or Freedom
+  - Whilst you wait for your turn I advise you try to keep yourself entertained. Read
+    a amgazine or chat with someone.
+  - "If you don't mind me prying, you interested in which faction?\n1 - Order\t2 -
+    Freedom\t3 - I don't know"
+  - Interesting. Well while you wait for your turn I advise you try to keep yourself
+    entertained. Read a amgazine or chat with someone.
+  - Interesting. Well while you wait for your turn I advise you try to keep yourself
+    entertained. Read a amgazine or chat with someone.
+  - Interesting. Well while you wait for your turn I advise you try to keep yourself
+    entertained. Read a amgazine or chat with someone.
+  - 
+  choiceLines: 03000000
+  _currentLine: 0
+  _currentChoice: 0
