@@ -8,14 +8,8 @@ public class NPC : MonoBehaviour
 
     public Dialogue Dialogue => _dialogue;
 
-    // private void OnMouseDown()
-    // {
-    //     Dialogue.IncrementDialogueLine();
-    //     Debug.Log("Dialogue line incremented.");
-    // }
-
     private void OnApplicationQuit()
     {
-        Dialogue.ResetDialogueLine();
+        Dialogue.ResetDialogue();
     }
 }

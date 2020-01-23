@@ -15,6 +15,10 @@ MonoBehaviour:
   _speech:
   - Y r u gae?
   - I am n0t gae
-  - U r gae
+  - "U r gae\n1 - No u\t2 - ur mom\t3 - yer dad"
+  - "Lezebiane?\t"
+  - Homoseckzuale?
+  - Then...wu iz gae?
+  choiceLines: 02000000
   _currentLine: 0
   _choice: 0

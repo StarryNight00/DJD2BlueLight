@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +11,9 @@ public class PlayerInteraction : MonoBehaviour
     private bool _hasRequirements;
     private Transform _cameraTransform;
     private List<InteractableItem> _inventory;
-    private LayerMask _vocalNPCsLayer;
-    private LayerMask _interactablesLayer;
     private Player _player;
 
-    public CanvasManager canvasManager;
+    [SerializeField] private CanvasManager _canvasManager;
 
     // ---------------------------TEST CODE HERE-------------------------------
     private NPC _currentNPC;
@@ -24,8 +23,6 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         _player = GetComponentInParent<Player>();
-        _vocalNPCsLayer = LayerMask.NameToLayer("VocalNPCs");
-        _vocalNPCsLayer = LayerMask.NameToLayer("Interactables");
         _currentItem = null;
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _inventory = new List<InteractableItem>();
@@ -57,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour
                 CheckNewNPC(newNPC);
             }
         }
-        else canvasManager.HideInteractionPanel();
+        else _canvasManager.HideInteractionPanel();
     }
 
     private void CheckNewItem(InteractableItem newItem)
@@ -88,11 +85,11 @@ public class PlayerInteraction : MonoBehaviour
             Debug.Log("New interactive NPC is valid");
             SetCurrentNPC(newNPC);
         }
-        else if(newNPC == _currentNPC)
+        else if (newNPC == _currentNPC)
         {
             DisplaySpeech();
         }
-        else if (newNPC == null)
+        else
         {
             Debug.Log("New interactive NPC is invalid as it is null");
             ClearCurrentNPC();
@@ -107,14 +104,14 @@ public class PlayerInteraction : MonoBehaviour
         {
             Debug.Log("Item interaction requirements met; Interacting");
             _hasRequirements = true;
-            canvasManager.ShowInteractionPanel(_currentItem.interactionText);
+            _canvasManager.ShowInteractionPanel(_currentItem.interactionText);
         }
         else
         {
             Debug.Log("Item interaction requirements not met; Displaying" +
                 "requirements");
             _hasRequirements = false;
-            canvasManager.ShowInteractionPanel(_currentItem.requirementText);
+            _canvasManager.ShowInteractionPanel(_currentItem.requirementText);
         }
     }
 
@@ -128,20 +125,33 @@ public class PlayerInteraction : MonoBehaviour
             _player.SetInteractionState(true);
 
             DisplaySpeech();
-            if (_currentNPC.Dialogue.CurrentLine ==
-                _currentNPC.Dialogue.Speech.Length - 1) 
-            {
-                _player.SetInteractionState(false);
-            }
         }
     }
 
     private void DisplaySpeech()
     {
+
         Debug.Log("Current interactive NPC set, displaying dialogue");
-        canvasManager.ShowInteractionPanel(
+        _canvasManager.ShowInteractionPanel(
             _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
         Debug.Log("Line displayed");
+
+        _canvasManager.ShowNextButton();
+        _canvasManager.HideChoicePanel();
+
+        if(_currentNPC.Dialogue.CurrentLine ==
+            _currentNPC.Dialogue.ChoiceLines[
+                _currentNPC.Dialogue.CurrentChoice])
+        {
+            _canvasManager.HideNextButton();
+            _canvasManager.ShowChoicePanel();
+        }
+
+        if (_currentNPC.Dialogue.CurrentLine ==
+            _currentNPC.Dialogue.Speech.Length - 1)
+        {
+            _player.SetInteractionState(false);
+        }
     }
 
     private bool HasInteractionRequirements()
@@ -158,13 +168,13 @@ public class PlayerInteraction : MonoBehaviour
     private void ClearCurrentInteractive()
     {
         _currentItem = null;
-        //canvasManager.HideInteractionPanel();
+        //_canvasManager.HideInteractionPanel();
     }
 
     private void ClearCurrentNPC()
     {
         _currentNPC = null;
-        //canvasManager.HideInteractionPanel();
+        //_canvasManager.HideInteractionPanel();
     }
 
     private void CheckForPlayerInteraction()
@@ -215,6 +225,12 @@ public class PlayerInteraction : MonoBehaviour
     public void IncrementDialogueLineOnButtonClick()
     {
         _currentNPC.Dialogue.IncrementDialogueLine();
+        Debug.Log("Line incremented");
+    }
+
+    public void UpdateDialogueWithChoiceOnClick(int choice)
+    {
+        _currentNPC.Dialogue.UpdateDialogueWithChoice(choice);
         Debug.Log("Line incremented");
     }
 }

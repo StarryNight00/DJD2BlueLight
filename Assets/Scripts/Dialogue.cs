@@ -6,28 +6,27 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue : ScriptableObject
 {
+    [Header("Collections of Dialogue and Choice lines")]
     // Array that holds the full lines of dialogue
+    [TextArea]
     [SerializeField] private string[] _speech = null;
+    // Array of integers that holds the lines at which the player has a choice
+    [SerializeField] private int[] choiceLines;
+    [Header("Current information variables")]
     // Integer that holds the current line of dialogue
     [SerializeField] private int _currentLine = 0;
-    // Integer that holds the player's choice ID, used to navigate the speech
-    // bidimensional array in order to display the correct dialogue on-screen
-    [SerializeField] private int _choice = default;
-    // Dictionary that holds the available dialogue choices, using an integer
-    // as the key, which corresponds to the speech's line that the player
-    // will be given the choice after, said choices being stored in a string
-    // array, the index of the answer selected being later used to determine
-    // the choice variable value
-    [SerializeField] private Dictionary<int, string[]> choiceLines = null;
+    // Integer that holds the player's choice ID, used to navigate the choice
+    // array
+    [SerializeField] private int _currentChoice = default;
 
     // Public property to grant access to the speech bidimensional string array
     public string[] Speech => _speech;
+    // public property to grant access to the private Dictionary choiceLines
+    public int[] ChoiceLines => choiceLines;
     // public property to grant access to the private int currentLine
     public int CurrentLine => _currentLine;
     // public property to grant access to the private int choice
-    public int Choice => _choice;
-    // public property to grant access to the private Dictionary choiceLines
-    public Dictionary<int, string[]> ChoiceLines => choiceLines;
+    public int CurrentChoice => _currentChoice;
 
     /// <summary>
     /// Public method used to update the current line of dialogue that is
@@ -35,9 +34,9 @@ public class Dialogue : ScriptableObject
     /// Used to determine what line of dialogue is shown after the player
     /// makes a choice.
     /// </summary>
-    public void UpdateDialogueLineWithChoice()
+    public void UpdateDialogueWithChoice(int choice)
     {
-        _currentLine += _choice;
+        _currentLine = Mathf.Min(_speech.Length - 1, _currentLine + choice);
     }
 
     /// <summary>
@@ -47,12 +46,18 @@ public class Dialogue : ScriptableObject
     /// </summary>
     public void IncrementDialogueLine()
     {
-        if (_currentLine < _speech.Length - 1) _currentLine++;
+        if (_currentLine < _speech.Length - 4) _currentLine++;
         Debug.Log($"Current Line: {_currentLine}");
     }
 
-    public void ResetDialogueLine()
+    public void IncrementChoice()
+    {
+        _currentChoice++;
+    }
+
+    public void ResetDialogue()
     {
         _currentLine = 0;
+        _currentChoice = 0;
     }
 }
