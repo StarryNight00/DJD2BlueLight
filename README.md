@@ -34,11 +34,13 @@ On one side, there's the Order Faction, which values total equality and integrat
 
 The other side of the coin is represented by the Freedom Faction, who believe that one should be themselves at all times. They have distinguishing personalities and, from mild to explosive, like to assert their ideas and manifest themselves.
 
-When transposing these concepts to Unity, a priority was the dialogue system - developed by Pedro - as it allowed for the player to experience our idea and be introduced more and more to an imperfect and extreme world. Meanwhile, Catarina and Afonso focused on the script and level design.
+When transposing these concepts to Unity, a priority was the dialogue system - developed by Pedro - as it allowed for the player to experience our idea and be introduced more and more to an imperfect and extreme world. Meanwhile, Catarina and Afonso focused on the script and level design to incorporate the dialogue on.
 
 As for the visual component, Catarina was focussed more here, making the visual assets and the user UI, on the `Canvas` class.
 
 Afonso focussed on the level design and programmed the `Menu` classes, along with their scenes. When pressing `ESC`, the player can exit to either the Start Menu and restart the game, or leave for the Desktop.
+
+
 
 ### UML Diagram
 
