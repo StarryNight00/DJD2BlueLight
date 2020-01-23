@@ -8,6 +8,7 @@ public class Sounds : MonoBehaviour
 {
     public AudioSource soundSource;
     public AudioClip steps;
+    public AudioClip door;
 
     CharacterController cc;
 
@@ -30,5 +31,11 @@ public class Sounds : MonoBehaviour
             soundSource.pitch = Random.Range(0.7f, 1f);
             soundSource.Play();
         }
+    }
+
+    public void DoorSound()
+    {
+        soundSource.clip = door;
+        soundSource.Play();
     }
 }
