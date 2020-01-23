@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class responsible for handling the karma system.
+/// </summary>
 public class Karma
 {
     [SerializeField] private int _orderKarma;
@@ -35,13 +38,5 @@ public class Karma
     {
         _freedomKarma -= karmaLoss;
         _orderKarma -= karmaLoss;
-    }
-
-    public void DetermineFaction()
-    {
-        if (_orderKarma - 20 > _freedomKarma && _orderKarma > 20) 
-            _player.SetPlayerFaction(Faction.Order);
-        else if (_freedomKarma - 20 > _orderKarma && _freedomKarma > 20) 
-            _player.SetPlayerFaction(Faction.Freedom);
     }
 }
