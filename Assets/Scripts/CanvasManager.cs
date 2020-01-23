@@ -47,6 +47,11 @@ public class CanvasManager : MonoBehaviour
         nextButton.SetActive(false);
     }
 
+    public void SetCursorVisibility(bool visibility)
+    {
+        Cursor.visible = visibility;
+    }
+
     public void Start()
     {
         HideInteractionPanel();

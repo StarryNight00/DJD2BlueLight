@@ -26,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
         _currentItem = null;
         _cameraTransform = GetComponentInChildren<Camera>().transform;
         _inventory = new List<InteractableItem>();
+        _canvasManager.SetCursorVisibility(false);
     }
     private void Update()
     {
@@ -123,7 +124,7 @@ public class PlayerInteraction : MonoBehaviour
             _currentNPC = newNPC;
 
             _player.SetInteractionState(true);
-
+            _canvasManager.SetCursorVisibility(true);
             DisplaySpeech();
         }
     }
@@ -147,10 +148,12 @@ public class PlayerInteraction : MonoBehaviour
             _canvasManager.ShowChoicePanel();
         }
 
-        if (_currentNPC.Dialogue.CurrentLine ==
-            _currentNPC.Dialogue.Speech.Length - 1)
+        if (_currentNPC.Dialogue.CurrentLine >=
+            _currentNPC.Dialogue.Speech.Length - 3)
         {
+            _canvasManager.HideNextButton();
             _player.SetInteractionState(false);
+            _canvasManager.SetCursorVisibility(false);
         }
     }
 
