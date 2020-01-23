@@ -2,39 +2,32 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class responsible for managing the dialogue displayed on-screen.
+/// </summary>
 public class DialogueManager : MonoBehaviour
 {
+    // private _canvas variable of Canvas type
     private Canvas _canvas;
+    // private _canvasManager variable of CanvasManager type
     private CanvasManager _canvasManager;
-    private Queue<string> _lines;
-    private Text _text;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Responsible for initializing the necessary variables on start of
+    /// running time.
+    /// </summary>
     private void Start()
     {
-        _lines = new Queue<string>();
         _canvas = FindObjectOfType<Canvas>();
         _canvasManager = _canvas.GetComponent<CanvasManager>();
     }
 
+    /// <summary>
+    /// Responsible for displaying single lines of dialogue in the canvas.
+    /// </summary>
+    /// <param name="line">Line to be displayed</param>
     public void ShowDialogue(string line)
     {
         _canvasManager.ShowInteractionPanel(line);
-    }
-
-    public void InitiateDialogue(Dialogue dialogue)
-    {
-        for (int i = 0; i < dialogue.Speech.Length; i++)
-        {
-            _lines.Enqueue(dialogue.Speech[i]);
-        }
-
-        for(int i = 0; i < _lines.Count; i++)
-        {
-            ShowDialogue(_lines.Dequeue());
-            // loop while primary mouse button is not pressed, which then
-            // updates the dialogue line
-            while (!Input.GetMouseButtonDown(0)) { }
-        }
     }
 }
