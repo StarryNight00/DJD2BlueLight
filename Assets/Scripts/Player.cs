@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private PlayerInteraction plyrInteraction;
     private Transform cameraTransform;
+    private Karma _playerKarma;
+    private Faction _playerFaction;
 
     private Vector3 velocity;
     private Vector3 acceleration;
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
 
     // Properties
     public bool Interacting { get; }
+    public Karma PlayerKarma => _playerKarma;
+    public Faction PlayerFaction => _playerFaction;
 
     //Game Updates
     private void UpdateAccelaration()
@@ -112,6 +116,11 @@ public class Player : MonoBehaviour
         _interacting = state;
     }
 
+    public void SetPlayerFaction(Faction faction)
+    {
+        _playerFaction = faction;
+    }
+
     //Engine Start
     public void Start()
     {
@@ -121,6 +130,8 @@ public class Player : MonoBehaviour
         acceleration = Vector3.zero;
         velocity = Vector3.zero;
         velocityFactor = WALK_VELOCITY_FACTOR;
+        _playerKarma = new Karma(this);
+        _playerFaction = Faction.None;
     }
 
     //Engine Updates

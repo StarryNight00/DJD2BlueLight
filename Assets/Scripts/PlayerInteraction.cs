@@ -18,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour
     // ---------------------------TEST CODE HERE-------------------------------
     private NPC _currentNPC;
 
-    public NPC CurrentNPC { get; }
+    public NPC CurrentNPC => _currentNPC;
 
     private void Start()
     {
@@ -131,7 +131,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void DisplaySpeech()
     {
-
+        Debug.Log($"Player Karma - Order: {_player.PlayerKarma.OrderKarma}" +
+            $"Freedom: {_player.PlayerKarma.OrderKarma}");
         Debug.Log("Current interactive NPC set, displaying dialogue");
         _canvasManager.ShowInteractionPanel(
             _currentNPC.Dialogue.Speech[_currentNPC.Dialogue.CurrentLine]);
@@ -235,5 +236,20 @@ public class PlayerInteraction : MonoBehaviour
     {
         _currentNPC.Dialogue.UpdateDialogueWithChoice(choice);
         Debug.Log("Line incremented");
+    }
+
+    public void BoostOrderKarmaOnClick(int karmaBoost)
+    {
+        _player.PlayerKarma.OrderChoice(karmaBoost);
+    }
+
+    public void BoostFreedomKarmaOnClick(int karmaBoost)
+    {
+        _player.PlayerKarma.FreedomChoice(karmaBoost);
+    }
+
+    public void NeutralChoiceOnClick(int karmaLoss)
+    {
+        _player.PlayerKarma.NeutralChoice(karmaLoss);
     }
 }
