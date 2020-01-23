@@ -40,7 +40,9 @@ As for the visual component, Catarina was focussed more here, making the visual 
 
 Afonso focussed on the level design and programmed the `Menu` classes, along with their scenes. When pressing `ESC`, the player can exit to either the Start Menu and restart the game, or leave for the Desktop.
 
+During the game, as the player moves through the room, they have to talk to the others and collect items. The other members will introduce th ideologies t them, or put the Player on a path to find a secret ending and escape the interview.
 
+We did not start this project with a specific pattern in mind. We can say we used the patterns that exist naturally within the Unity code, such has the `Update Pattern`. However, no specific pattern was used consciously.
 
 ### UML Diagram
 
