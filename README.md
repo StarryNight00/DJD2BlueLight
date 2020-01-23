@@ -8,13 +8,15 @@
 
 **Catarina Matias** - a21801693 [StarryNight00](https://github.com/StarryNight00)
 
-**Afonso Rosa**     - a21801515 (Não está inscrito na disciplina)
+**Afonso Rosa**     - a21801515 (Not in the class)
 
 ### Tasks of each group member
 
-**Pedro Inácio** (NPC, dialogue classes and UI, level design)
+**Pedro Inácio** (NPC, dialogue classes, karma and UI, level design)
 
-kkk
+Main creator of the dialogue system. Was responsible for its incorporation and UI, and participated in the level design. Such related classes created are `NPC`, any `Dialogue` class, ... !!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Catarina Matias** (TicketTimer, Camera & Player Movement, in-Engine Animations, player-UI canvas, level design)
 
@@ -36,7 +38,7 @@ The other side of the coin is represented by the Freedom Faction, who believe th
 
 When transposing these concepts to Unity, a priority was the dialogue system - developed by Pedro - as it allowed for the player to experience our idea and be introduced more and more to an imperfect and extreme world. Meanwhile, Catarina and Afonso focused on the script and level design to incorporate the dialogue on.
 
-As for the visual component, Catarina was focussed more here, making the visual assets and the user UI, on the `Canvas` class.
+As for the visual component, Catarina was focussed more here, making the visual assets and the User Interface, on the `Canvas` class.
 
 Afonso focussed on the level design and programmed the `Menu` classes, along with their scenes. When pressing `ESC`, the player can exit to either the Start Menu and restart the game, or leave for the Desktop.
 
