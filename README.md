@@ -4,9 +4,11 @@
 
 ### Authors
 
-#### Pedro Inácio - a21802050 [PmaiWoW](https://github.com/PmaiWoW)
+#### Pedro Inácio - a21802050 
+[PmaiWoW](https://github.com/PmaiWoW)
 
-#### Catarina Matias - a21801693 [StarryNight00](https://github.com/StarryNight00)
+#### Catarina Matias - a21801693 
+[StarryNight00](https://github.com/StarryNight00)
 
 #### Afonso Rosa - a21801515 (Not enrolled in this class)
 
