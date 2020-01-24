@@ -50,7 +50,6 @@ public class Dialogue : ScriptableObject
     public void IncrementDialogueLine()
     {
         if (_currentLine < _speech.Length - 4) _currentLine++;
-        Debug.Log($"Current Line: {_currentLine}");
     }
 
     /// <summary>
