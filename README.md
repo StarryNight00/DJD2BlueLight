@@ -74,7 +74,7 @@ with no code necessary, as to allow Afonso to simply drop a Dialogue into the
 NPC's appropriate field in the editor and fill out the conversation as they
 pleased, allowing for choices to be made as well.
 
-A rudimentary karma system for the playerwas also developed by Pedro, but the
+A rudimentary karma system for the player was also developed by Pedro, but the
 end goal we hoped to achieve with it in the game was, unfortunately, not
 achieve, although the system present allows for it to be completed at a later
 date.
@@ -95,13 +95,17 @@ arrows are available.
 
 The following references where used during this project.
 
-**[1]** Class Power-points.
+**[1]** Linguagens de Programação 2 class Power-points.
 
-**[2]** Our classmate Leandro Brás helped with some concept and basic logic for
-the dialog system.
+**[2]** Our classmates Leandro Brás and André Vitorino helped with some concept
+and basic logic for the dialog system, giving tips and pointers on how the
+logic could be done.
 
 **[3]** Desenvolvimento de Jogos Digitais classes. The code developed in these
 classes was used as a stepping stone for most of the code that was common to
 the ideas presented.
 
 **[4]** Unity and Microsoft's C# APIs.
+
+**[5]** Reference books of the Linguagens de Programação 2 class were consulted
+many times throughout this project.
