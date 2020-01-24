@@ -4,21 +4,30 @@
 
 ### Authors
 
-**Pedro Inácio**    - a21802050 [PmaiWoW](https://github.com/PmaiWoW)
+#### Pedro Inácio - a21802050 [PmaiWoW](https://github.com/PmaiWoW)
 
-**Catarina Matias** - a21801693 [StarryNight00](https://github.com/StarryNight00)
+#### Catarina Matias - a21801693 [StarryNight00](https://github.com/StarryNight00)
 
-**Afonso Rosa**     - a21801515 (Not in the class)
+#### Afonso Rosa - a21801515 (Not enrolled in this class)
 
 ### Tasks of each group member
 
-**Pedro Inácio** (NPC, dialogue classes, karma and UI, level design)
+#### Pedro Inácio 
 
-Main creator of the dialogue system. Was responsible for its incorporation and UI, and participated in the level design. Such related classes created are `NPC`, any `Dialogue` class, ... !!!!!!!!!!!!!!!!!!!!!
+##### NPC, dialogue classes, karma and UI, level design, general quality checking, XML commenting, Doxygen generation, UML creation and README redaction;
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Main creator of the dialogue and karma systems and responsible for their
+incorporation and UI throughout the project. Participated in level design.
+Creator and/or main contributor to the `Dialogue`, `NPC`, `DialogueManager`,
+`Karma` and enum `Faction`. Responsible for quality checking all of the code
+made and attempting to improve it where and when possible.
 
-**Catarina Matias** (TicketTimer, Camera & Player Movement, in-Engine Animations, player-UI canvas, level design)
+Responsible for all of the XML commenting, generation of Doxygen documentation
+and UML creation, working in tandom with Catarina Matias to write the `README.md` file.
+
+#### Catarina Matias
+
+##### TicketTimer, Camera & Player Movement, in-Engine Animations, player-UI canvas, level design;
 
 Responsible for the `TicketTimer` and `Player` classes. Was responsible for the incorporation of the code given in DJD classes in this project and it's adaptation to the current project. Regular tasks included level design and code updating, along with code support to the team and fixes.
 
@@ -46,7 +55,7 @@ We did not start this project with a specific pattern in mind. We can say we use
 
 The following class diagram represents associations between classes. The are more Dependency arrows but to make the diagram readable only the most important arrows are available.
 
-![UML Diagram](??)
+![UML_Diagram](UML_Diagram.png)
 
 ## References
 
